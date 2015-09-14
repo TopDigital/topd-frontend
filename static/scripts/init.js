@@ -8,7 +8,9 @@ requirejs.config({
         'handlebars': '../components/handlebars/handlebars.amd.min',
         'i18next': '../components/i18next/i18next.amd.min',
         'moment': '../components/moment/min/moment.min',
+        'TinyMCE': '../components/tinymce/tinymce.min',
         'Utils': 'components/Utils',
+        'Editor': 'components/Editor',
         'FormParsleyAjax': 'components/FormParsleyAjax'
     },
     shim: {
@@ -20,6 +22,13 @@ requirejs.config({
         },
         'bootstrap': {
             'deps': ['jquery']
+        },
+        'TinyMCE': {
+            exports: 'tinyMCE',
+            init: function () {
+                this.tinyMCE.DOM.events.domLoaded = true;
+                return this.tinyMCE;
+            }
         }
     }
 });
