@@ -1,4 +1,7 @@
 .idea
 
-index*.php
+index.php
+index2.php
 post.php
+
+static/scripts/controllers/*

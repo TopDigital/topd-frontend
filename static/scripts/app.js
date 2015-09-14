@@ -30,7 +30,7 @@ define('app', ['bootstrap', 'jquery', 'i18next'], function(undefined, $, i18next
                 i18next.init({ lng: "ru-RU", resGetPath: 'locales/ru-RU/translation.json', getAsync: false  });
 
                 var controllerName = this.getData('controller');
-                if(controllerName != undefined){
+                if(controllerName && controllerName != undefined){
                     requirejs([controllerName], function(controllerObject){
                         controllerObject && controllerObject.init();
                     });

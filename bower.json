@@ -1,10 +1,12 @@
 {
-  "name": "Frontend",
-  "version": "0.0.0",
+  "name": "Topd-Frontend",
+  "version": "0.1.1",
+  "description": "Topd JS frontend",
   "authors": [
     "lvov.w <lvov.v@topsdigital.ru>"
   ],
   "license": "MIT",
+  "homepage": "https://github.com/TopDigital/topd-frontent",
   "ignore": [
     "**/.*",
     "node_modules",
