@@ -1,6 +1,6 @@
 {
   "name": "Topd-Frontend",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Topd JS frontend",
   "authors": [
     "lvov.w <lvov.v@topsdigital.ru>"
@@ -12,7 +12,8 @@
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "static/scripts/controllers/*"
   ],
   "dependencies": {
     "bootstrap": "~3.3.5",
