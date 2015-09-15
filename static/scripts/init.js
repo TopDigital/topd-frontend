@@ -33,21 +33,23 @@ requirejs.config({
     }
 });
 
-window.ParsleyConfig = {
-    autoBind: false,
-    errorClass: 'has-error',
-    successClass: 'has-success',
-    classHandler: function(ParsleyField) {
-        return ParsleyField.$element.parents('.form-group');
-    },
-    errorsContainer: function(ParsleyField) {
-        return ParsleyField.$element.parents('.form-group');
-    },
-    errorsWrapper: '<span class="help-block">',
-    errorTemplate: '<div></div>'
-};
-
 requirejs(['jquery', 'app'], function($, Application) {
+
+    window.ParsleyConfig = window.ParsleyConfig || {};
+    window.ParsleyConfig = $.extend(window.ParsleyConfig || {}, {
+        autoBind: false,
+        errorClass: 'has-error',
+        successClass: 'has-success',
+        classHandler: function(ParsleyField) {
+            return ParsleyField.$element.parents('.form-group');
+        },
+        errorsContainer: function(ParsleyField) {
+            return ParsleyField.$element.parents('.form-group');
+        },
+        errorsWrapper: '<span class="help-block">',
+        errorTemplate: '<div></div>'
+    });
+
     $(document).ready(function() {
         var myApplication = new Application();
         myApplication.run();

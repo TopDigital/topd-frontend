@@ -4,6 +4,8 @@
  */
 define(['jquery', 'jquery-form', 'parsley', 'Utils'], function($, undefined, parsley, Utils) {
 
+    requirejs(['../components/parsleyjs/src/i18n/ru']);
+
     return function(formId, options){
 
         var _this = this,
