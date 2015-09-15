@@ -76,7 +76,12 @@ define( 'Utils', [ 'jquery', 'handlebars' ], function($, Handlebars ){
                 }
 
 
-                var $modal = $('#Utils-confirm-modal');
+                var $modal = $('#Utils-confirm-modal'), modalClose = function(){
+                    $modal
+                        .modal('hide')
+                        .detach()
+                        .empty();
+                };
 
                 if($modal.length == 0){
                     $modal = $(
@@ -108,13 +113,11 @@ define( 'Utils', [ 'jquery', 'handlebars' ], function($, Handlebars ){
                 $modal.modal();
                 $modal.find('.-discard-').click(function(){
                     discardCallback && discardCallback.call($modal);
-                    $modal.modal('hide');
-                    $modal.detach();
+                    modalClose();
                 })
                 $modal.find('.-submit-').click(function(){
                     submitCallback && submitCallback.call($modal);
-                    $modal.modal('hide');
-                    $modal.detach();
+                    modalClose();
                 });
             }
         };
